@@ -1,0 +1,1 @@
+g++  -g  -rdynamic CMakeFiles/a.dir/src/input.cpp.o CMakeFiles/a.dir/src/main.cpp.o CMakeFiles/a.dir/src/version.cpp.o  -o ../bin/a 

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/mechrevo/Documents/project/build",
+  "command": "g++   -I/home/mechrevo/Documents/project/include  -g   -o CMakeFiles/a.dir/src/input.cpp.o -c /home/mechrevo/Documents/project/src/input.cpp",
+  "file": "/home/mechrevo/Documents/project/src/input.cpp"
+},
+{
+  "directory": "/home/mechrevo/Documents/project/build",
+  "command": "g++   -I/home/mechrevo/Documents/project/include  -g   -o CMakeFiles/a.dir/src/main.cpp.o -c /home/mechrevo/Documents/project/src/main.cpp",
+  "file": "/home/mechrevo/Documents/project/src/main.cpp"
+},
+{
+  "directory": "/home/mechrevo/Documents/project/build",
+  "command": "g++   -I/home/mechrevo/Documents/project/include  -g   -o CMakeFiles/a.dir/src/version.cpp.o -c /home/mechrevo/Documents/project/src/version.cpp",
+  "file": "/home/mechrevo/Documents/project/src/version.cpp"
+}
+]
