@@ -3,5 +3,5 @@
 #include <map>
 using namespace std;
 void input(string s);
-//extern map<string, string> lib;
+extern map<string, string> lib;
 #endif
