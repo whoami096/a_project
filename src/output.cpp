@@ -7,6 +7,7 @@
 using namespace std;
 void output(string s)
 {
+    //cout << "#" << s << endl;
     if(obase == 10) cout << s << endl;
     else
     {
@@ -17,16 +18,19 @@ void output(string s)
         tmp /= R;
         vector<int> v1;
         ans.sign_ = 1;
+        //cout << "#" << tmp << endl;
         while (ans || tmp)
         {
             Bigint tmp1 = ans/tmp;
             int tmp2 = 0;
-            while(tmp1)
+            //cout << "#!" << tmp1 << endl;
+            while(tmp1.val_.size())
             {
                 tmp2 *= 10;
                 tmp2 += tmp1.val_.back();
                 tmp1.val_.pop_back();
             }
+            //cout << "#!" << tmp2 << endl;
             v1.push_back(tmp2);
             ans %= tmp;
             tmp /= R;
@@ -39,7 +43,7 @@ void output(string s)
         }
         else
         {
-            for(auto i:v1) if(i>9) cout << 'A' + i - 10;else cout << i;
+            for(auto i:v1) if(i>9) cout << char('A' + i - 10);else cout << i;
         }
         puts("");
     }

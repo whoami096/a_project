@@ -2,10 +2,12 @@
 #include <vector>
 #include <algorithm>
 #include "myint.h"
+#include "global.h"
 using namespace std;
 
     //constructor
-    Bigint::Bigint(long long _t){
+    Bigint::Bigint(long long _t)
+    {
         if(_t < 0) sign_ = -1;
         else sign_ = 1;
         _t = abs(_t);
@@ -26,13 +28,14 @@ using namespace std;
         else sign_ = 1;
         while (_t.size())
         {
-            int x = _t.back()-'0';
+            int x = _t.back()-'0'; //A 65 0 48 65-48-7=10
             if(x > 9) x -= 7;
             val_.push_back(x);
             _t.pop_back();
         }
+        
     }
-    //cast operator
+    //cast operator while()
     Bigint::operator bool()
     {
         if(val_.size() == 1 && val_.back() == 0 || val_.size() == 0) return false;
@@ -74,7 +77,7 @@ using namespace std;
         return tmp1;
         
     }
-    Bigint Bigint::operator%(Bigint &obj)
+    Bigint Bigint::operator%(Bigint &obj) // 7%3 = 7 - 7/3*3
     {
         if(obj.val_.size() == 1 && obj.val_[0] == 0) return Bigint();
         Bigint tmp1 = (*this) / obj, tmp3 = obj;
@@ -106,19 +109,20 @@ using namespace std;
         tmp1.sign_ = 1, tmp2.sign_ = 1;
         if(tmp1 < tmp2 || obj.val_.size() == 1 && obj.val_[0] == 0) return tmp;
         
-        Bigint r = *this, l = 0, mi = 2, mi1 = 1;
+        Bigint r = tmp1, l = 0, mi = 2, mi1 = 1;
         while (l < r)
         {
             Bigint mid = l + r + mi1;
             mid.half();
-            if((mid * obj) > *this) r = mid - mi1;
+            if((mid * tmp2) > tmp1) r = mid - mi1;
             else l = mid;
             //cout << mid << endl;
         }
         if(sign_ * obj.sign_ == -1) l.sign_ = -1;
-        return r;
+        //cout << "#1" << l << "#2" << endl;
+        return l;
     }
-    Bigint Bigint::operator*(Bigint &obj)
+    Bigint Bigint::operator*(Bigint &obj)// 123   456
     {
         Bigint tmp;
         for (int i = 0; i < val_.size(); i++)
