@@ -1,3 +1,0 @@
-/home/mechrevo/Documents/project/build/CMakeFiles/rebuild_cache.dir
-/home/mechrevo/Documents/project/build/CMakeFiles/edit_cache.dir
-/home/mechrevo/Documents/project/build/CMakeFiles/a.dir
